@@ -14,7 +14,11 @@ from tkinter import *
 from tkinter import messagebox  
 
 def clicked():
+    vid = (txtlink.get())
     yt = YouTube(vid)
+    pup = (txtfolder.get())
+    path = (pup)
+
     yt.streams.filter(progressive=True, file_extension='mp4')
     yt.streams.order_by('resolution')
     yt.streams.desc()
@@ -29,13 +33,15 @@ vidlink = Label(window, text="Вставьте ссылку на видео, к�
 vidlink.grid(column = 0, row = 1) 
 txtlink = Entry(window, width = 40)  
 txtlink.grid(column = 0, row= 2)  
-vid = YouTube(txtlink.get())
+
+# vid = YouTube(txtlink.get())
 
 folderlink = Label(window, text="Напишите адрес папки, куда скачать файл")
 folderlink.grid(column = 0, row = 4) 
 txtfolder = Entry(window, width = 40)  
 txtfolder.grid(column = 0, row= 5)  
-path = (txtfolder.get)
+
+# path = (txtfolder.get)
 
 btn = Button(window, text="Скачать", command = clicked)
 btn.grid(column = 0, row = 10)
